@@ -1,4 +1,4 @@
 const config = {
-    'server-nu-teal.vercel.app',
+    BACKEND_URL: 'server-nu-teal.vercel.app',
 }
 export default config
