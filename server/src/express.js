@@ -23,7 +23,7 @@ const allowedOrigins = [process.env.FRONTEND_URL, process.env.FRONTEND_TEST_URL]
 
 // for vercel's serverless function stream handling
 app.use(express.json())
-app.use(express.urlencoded({extended: true})
+app.use(express.urlencoded({extended: true}))
         
 app.use((req, res, next) => {
     res.set('Cross-Origin-Resource-Policy', 'cross-origin')
