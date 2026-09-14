@@ -30,6 +30,10 @@ app.use(
         origin: allowedOrigins,
     }),
 )
+
+// for vercel's serverless function stream handling
+app.use(express.json())
+
 // parse body params and attache them to req.body
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
