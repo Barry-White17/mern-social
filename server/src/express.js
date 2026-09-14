@@ -33,6 +33,7 @@ app.use(
 
 // for vercel's serverless function stream handling
 app.use(express.json())
+app.use(express.urlencoded({extended: true})
 
 // parse body params and attache them to req.body
 app.use(bodyParser.json())
