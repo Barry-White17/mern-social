@@ -20,6 +20,11 @@ const CURRENT_WORKING_DIR = process.cwd()
 const app = express()
 const allowedOrigins = [process.env.FRONTEND_URL, process.env.FRONTEND_TEST_URL]
 //comment out before building for production
+
+// for vercel's serverless function stream handling
+app.use(express.json())
+app.use(express.urlencoded({extended: true})
+        
 app.use((req, res, next) => {
     res.set('Cross-Origin-Resource-Policy', 'cross-origin')
     next()
@@ -30,10 +35,6 @@ app.use(
         origin: allowedOrigins,
     }),
 )
-
-// for vercel's serverless function stream handling
-app.use(express.json())
-app.use(express.urlencoded({extended: true})
 
 // parse body params and attache them to req.body
 app.use(bodyParser.json())
