@@ -24,7 +24,10 @@ const allowedOrigins = [process.env.FRONTEND_URL, process.env.FRONTEND_TEST_URL]
 // for vercel's serverless function stream handling
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-        
+
+// cookieParser converts our cookies, which are by default strings into usable javaScript objects
+app.use(cookieParser())
+
 app.use((req, res, next) => {
     res.set('Cross-Origin-Resource-Policy', 'cross-origin')
     next()
@@ -42,7 +45,7 @@ app.use(
 
 // app.use(bodyParser.json())
 // app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cookieParser())
+
 app.use(compress())
 // secure apps by setting various HTTP headers
 app.use(
