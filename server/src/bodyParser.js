@@ -21,7 +21,7 @@ export default function bodyParser(req, res, next){
     }
     next();
   });
-  req.on('error', ()=> {
+  req.on('error', (err)=> {
     next(err);
   });
 }
