@@ -1,6 +1,6 @@
 import express from 'express'
 import path from 'path'
-import bodyParser from './bodyParser.js'
+// import bodyParser from './bodyParser.js'
 import cookieParser from 'cookie-parser'
 import compress from 'compression'
 import cors from 'cors'
@@ -29,7 +29,9 @@ const allowedOrigins = [process.env.FRONTEND_URL, process.env.FRONTEND_TEST_URL]
 
 // cookieParser converts our cookies, which are by default strings into usable javaScript objects
 app.use(cookieParser())
-app.use(bodyParser())
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+// app.use(bodyParser())
 app.use((req, res, next) => {
     res.set('Cross-Origin-Resource-Policy', 'cross-origin')
     next()
