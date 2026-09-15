@@ -46,8 +46,8 @@ app.use(
 
 // bodyParser section commented out since vercel relies solely on express.json()
 
-// app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(compress())
 // secure apps by setting various HTTP headers
