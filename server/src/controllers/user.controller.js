@@ -7,7 +7,7 @@ import { firstValues } from 'formidable/src/helpers/firstValues.js'
 import bcrypt from 'bcrypt'
 
 const create = async (req, res) => {
-    console.log(`Body: ${req.body}`)
+    console.log(`Body: ${JSON.parse(req.body)}`)
     console.log(`Content Type: ${req.headers['content-type']}`)
     const user = new User(req.body)
     try {
