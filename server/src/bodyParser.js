@@ -11,7 +11,7 @@ export default function bodyParser(req, res, next){
     chunks.push(chunk);
   });
   req.on('end', ()=> {
-    const rawBody= Buffer.concat(chunks).toString('utf-8);
+    const rawBody= Buffer.concat(chunks).toString('utf-8');
     try{
       req.body= rawBody? JSON.parse(rawBody): {};
     }
