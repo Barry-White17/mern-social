@@ -14,6 +14,7 @@ if (process.env.ENVIRONMENT == 'test') {
     await database(process.env.TEST_DATABASE_URL)
 }
 
+/*
 app.listen(process.env.PORT, (err) => {
     if (err) {
         console.log(err)
@@ -21,3 +22,5 @@ app.listen(process.env.PORT, (err) => {
     console.info('Server started on port %s.', process.env.PORT)
     console.info(`Port: ${process.env.PORT}`)
 })
+*/
+export default app
