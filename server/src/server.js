@@ -6,7 +6,7 @@ import mongoose from 'mongoose'
 import { database } from './models/database.js'
 
 // Connection URL
-await database(process.env.DEV_DATABASE_URL)
+await database(process.env.DATABASE_URL)
 
 /*
 app.listen(process.env.PORT, (err) => {
