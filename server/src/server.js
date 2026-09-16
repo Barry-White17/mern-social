@@ -6,13 +6,7 @@ import mongoose from 'mongoose'
 import { database } from './models/database.js'
 
 // Connection URL
-if (process.env.ENVIRONMENT == 'sandbox') {
-    await database(process.env.DEV_DATABASE_URL)
-}
-
-if (process.env.ENVIRONMENT == 'test') {
-    await database(process.env.TEST_DATABASE_URL)
-}
+await database(process.env.DEV_DATABASE_URL)
 
 /*
 app.listen(process.env.PORT, (err) => {
