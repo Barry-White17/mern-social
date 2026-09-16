@@ -9,15 +9,20 @@ import bcrypt from 'bcrypt'
 const create = async (req, res) => {
     console.log(`Req body: ${JSON.stringify(req.body)}`)
     const user = new User(req.body)
+    console.log(`One`)
     try {
         await user.save()
+        console.log(`Two`)
         return res
             .status(200)
             .json({ message: 'Successfully signed up', user: user._id }) // User Object is returned for tests only
+        console.log(`Three`)
     } catch (err) {
+        console.log(`Three and half`)
         return res.status(400).json({
             error: errorHandler.getErrorMessage(err),
         })
+        console.log(`Four`)
     }
 }
 
