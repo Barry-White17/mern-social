@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import { database } from './models/database.js'
 
 // Connection URL
+console.log(`Database Url: ${process.env.DATABASE_URL}`)
 database(process.env.DATABASE_URL)
 
 /*
