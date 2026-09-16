@@ -1,12 +1,10 @@
-import dotenv from 'dotenv'
-dotenv.config()
 
 import app from './express.js'
 import mongoose from 'mongoose'
 import { database } from './models/database.js'
 
 // Connection URL
-await database(process.env.DATABASE_URL)
+database(process.env.DATABASE_URL)
 
 /*
 app.listen(process.env.PORT, (err) => {
