@@ -10,7 +10,7 @@ const create = async (req, res) => {
     console.log(`Req body: ${JSON.stringify(req.body)}`)
     const user = new User(req.body)
     console.log(`One`)
-    console.log(`Mongodb Uri: ${process.env.DATABASE_URI}`)
+    console.log(`Mongodb Uri: ${process.env.DATABASE_URL}`)
     try {
         await user.save()
         console.log(`Two`)
