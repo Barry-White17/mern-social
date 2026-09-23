@@ -1,10 +1,11 @@
 
 import app from './express.js'
 import mongoose from 'mongoose'
-import { database } from './models/database.js'
+// import { database } from './models/database.js'
+import {initDatabase} from './models/init.js
 
 // Connection URL
-await database(process.env.DATABASE_URL)
+await initDatabase()
 
 /*
 app.listen(process.env.PORT, (err) => {
