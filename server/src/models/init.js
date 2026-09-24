@@ -13,7 +13,7 @@ const initDatabase = () => {
 }
 if(!cached){
     cached= global.mongoose= {
-        connection: null,
+        conn: null,
         promise: null
     }
 }
