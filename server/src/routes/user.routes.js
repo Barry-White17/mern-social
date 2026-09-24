@@ -1,11 +1,11 @@
 import express from 'express'
 import userCtrl from '../controllers/user.controller.js'
 import authCtrl from '../controllers/auth.controller.js'
-import {connectionForServerlessEnvs} from './../models/init.js'
+import dbCtrl from './../models/init.js'
 
 const router = express.Router()
 
-router.route('/api/users').post(connectionForServerlessEnvs, userCtrl.create)
+router.route('/api/users').post(dbCtrl.connectionForServerlessEnvs, userCtrl.create)
 
 router.route('/api/users/photo/:userId').get(userCtrl.photo)
 
