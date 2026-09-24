@@ -2,7 +2,7 @@
 // dotenv.config()
 import mongoose from 'mongoose'
 
-cosnt initDatabase = () => {
+const initDatabase = () => {
     const DATABASE_URL = process.env.DATABASE_URL
     mongoose.connection.on('open', () => {
         console.info('successfully connected to database:', DATABASE_URL)
