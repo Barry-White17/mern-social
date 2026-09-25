@@ -1,4 +1,4 @@
 const config = {
-    BACKEND_URL: 'https://mern-social-backend-w1me.onrender.com',
+    BACKEND_URL: 'https://mern-social-test.vercel.app',
 }
 export default config
